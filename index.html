@@ -1,0 +1,1054 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/nodebots.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <a href="assets/nodebot-450x450.png" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/nodebot-450x450.png" target="_blank"><img src="assets/nodebot-450x450.png" style="width: 450px"></a>
+        </a>
+
+        <h3><a href="http://nodebots.io/" target="_blank" data-destyle="" class="">nodebots.io</a></h3>
+        <script>
+          // Delicously hacky. Look away.
+          if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) document.write('<p style="color: rgba(0,0,0,0.3); text-shadow: none;">(' + 'Tap to navigate' + ')</p>');
+        </script>
+      </section>
+
+      <section>
+        <a href="assets/sgier-johnny-five.png" target="_blank">
+          <a href="http://johnny-five.io/" target="_blank"><img src="assets/sgier-johnny-five.png" style="width: 450px"></a>
+        </a>
+
+        <h3><a href="http://johnny-five.io/" target="_blank" data-destyle="" class="">johnny-five.io</a></h3>
+
+      </section>
+
+
+      <section>
+        <h1>Follow Along</h1>
+        <a href="http://ryanjgill.github.io/nbd2017" target="_blank">ryanjgill.github.io/nbd2017</a>
+      </section>
+
+      <section>
+        <h4>Alan Lee</h4>
+        <h4>Binu Panicker</h4>
+        <h4>Donovan Buck</h4>
+        <h4>Michelle Wigington</h4>
+        <h4>Pierce Primm</h4>
+        <h4>Ryan Gill</h4>
+      </section>
+
+      <section>
+        <h1>
+          Important Points<br> To Consider
+        </h1>
+      </section>
+
+      <section>
+        <h1>
+          The only dumb question is the one you never asked.
+        </h1>
+      </section>
+
+      <section>
+        <h1>
+          Doesn't work? <br> It's probably the hardware.
+        </h1>
+      </section>
+
+      <section>
+        <h2>Getting started with the Tessel</h2>
+        <div class="stretch">
+          <img src="assets/tessel_logo.png" alt="Tessel Logo" class="bg-transparent no-border">
+        </div>
+      </section>
+
+      <section>
+        <h2>Install Tessel CLI</h2>
+        <pre><code contenteditable="" class="javascript">npm install -g t2-cli</code></pre>
+        <p class="note">Note: If you get the common npm EACCES error, correct it by fixing npm permissions and run the command again.
+          <br>
+          <br>
+          <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">
+            https://docs.npmjs.com/getting-started/fixing-npm-permissions
+          </a>
+        </p>
+      </section>
+      <section>
+        <section>
+          <h3>Run a file</h3>
+          <pre><code contenteditable="">t2 run index.js</code></pre>
+          <image src="assets/t2_run.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 run name_of_file</code></pre>
+          <p class="note">Copy the file and its
+           dependencies into Tessel's RAM & run immediately. Use this during
+            development of your device application.
+          </p>
+          <table class="flag_details">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>--lan</td>
+                <td>deploy over LAN connection</td>
+              </tr>
+              <tr>
+                <td>--usb</td>
+                <td>deploy over USB connection</td>
+              </tr>
+              <tr>
+                <td>--slim</td>
+                <td>copy only files needed by the program to run</td>
+              </tr>
+              <tr>
+                <td>--full</td>
+                <td>copy all the files in the project directory</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      
+      <section>
+        <section>
+          <h3>Push a file</h3>
+          <pre><code contenteditable="">t2 push index.js</code></pre>
+          <image src="assets/t2_push.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 push name_of_file</code></pre>
+          <p class="note">Copy the file and its dependencies into Tessel's Flash 
+            memory & run immediately. Once deployed with <span class="hljs inline hljs-keyword">push</span> command, the device 
+            application will automatically run every time the Tessel restarts.
+          </p>
+          <table class="flag_details">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>--lan</td>
+                <td>deploy over LAN connection</td>
+              </tr>
+              <tr>
+                <td>--usb</td>
+                <td>deploy over USB connection</td>
+              </tr>
+              <tr>
+                <td>--slim</td>
+                <td>copy only files needed by the program to run</td>
+              </tr>
+              <tr>
+                <td>--full</td>
+                <td>copy all the files in the project directory</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      
+      <section>
+        <section>
+          <h3>Erase Files</h3>
+          <pre><code contenteditable="">t2 erase</code></pre>
+          <image src="assets/t2_erase.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 erase</code></pre>
+          <p>Erase any code previously pushed to the Tessel using 
+            the <span class="hljs inline"> t2 </span>
+            <span class="hljs inline hljs-keyword"> push</span> command.
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h1>Let's learn about your Johnny-Five Starter Kit!</h1>
+      </section>
+
+      <section>
+        <h3>Tessel 2</h3>
+        <div class="stretch">
+          <a href="assets/tessel.png" target="_blank">
+            <img src="assets/tessel.png">
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h3>Breadboard: Solderless wiring</h3>
+        <a href="assets/kit-001.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/kit-001.jpg" target="_blank"><img src="assets/kit-001.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Breadboard: Electrical Connections</h3>
+        <a href="assets/breadboard-conections.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/breadboard-conections.jpg" target="_blank"><img src="assets/breadboard-conections.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Resistors: Reduce Current Flow, lower Voltage Level</h3>
+        <a href="assets/kit-007.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/kit-007.jpg" target="_blank"><img src="assets/kit-007.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>LEDs: Light Up Your Life</h3>
+        <a href="assets/kit-008.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/kit-008.jpg" target="_blank"><img src="assets/kit-008.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Buttons, Potentiometer</h3>
+        <a href="assets/kit-010.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/kit-010.jpg" target="_blank"><img src="assets/kit-010.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Sensor: Temperature</h3>
+        <a href="assets/kit-011.jpg" target="_blank">
+          <img src="assets/kit-011.jpg" style="width: 600px">
+        </a>
+      </section>
+
+      <section>
+        <h3>Jumper Wires! </h3>
+        <a href="assets/kit-020.jpg" target="_blank">
+          <img src="assets/kit-020.jpg" style="width: 600px">
+        </a>
+      </section>
+
+
+      <section>
+        <h1>
+          Ready To Make Stuff?
+        </h1>
+      </section>
+
+      <section>
+        <h1>
+          Create Output
+        </h1>
+      </section>
+
+      <section>
+        <div class="stretch">
+          <a href="assets/tessel-led-blink.png" target="_blank">
+            <img src="assets/tessel-led-blink.png">
+          </a>
+        </div>
+        
+      </section>
+
+      <section>
+        <h2>
+          Connect The Tessel to your computer via USB.
+        </h2>
+      </section>
+
+
+      <section>
+        <h2>
+          Make a project directory and navigate<br>there in Shell/Command Prompt
+        </h2>
+      </section>
+
+      <section>
+        <h3>Initialize project</h3>
+        <pre><code class="javascript">t2 init</code></pre>
+      </section>
+
+      <section>
+        <div class="stretch">
+          <a href="assets/sgier-johnny-five.png" target="_blank">
+            <img src="assets/sgier-johnny-five.png">
+          </a>
+        </div>
+        <pre><code>npm install johnny-five tessel-io</code></pre>
+      </section>
+
+      <section>
+        <h3>
+          Make a new file.
+        </h3>
+         <pre><code>touch blink.js</code></pre>
+      </section>
+
+      <section>
+        <h2>Turn LED on</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led("A0");
+  led.on();
+});
+</code></pre>
+        <pre><code>t2 run led-on.js</code></pre>
+        <h4>
+          <a href="http://johnny-five.io/api/board" target="_blank" class="roll">http://johnny-five.io/api/board</a><br>
+          <a href="http://johnny-five.io/api/led" target="_blank" class="roll">http://johnny-five.io/api/led</a>
+        </h4>
+      </section>
+
+      <section>
+        <h2>Make LED blink</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led("A0");
+  led.blink();
+});
+</code></pre>
+        <pre><code>t2 run led-blink.js</code></pre>
+      </section>
+
+      <section>
+        <h2>Change the blink rate.</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led("A0");
+  led.blink(2500); // <-- ms on/off phases
+});
+</code></pre>
+        <pre><code>t2 run led-blink-slow.js</code></pre>
+      </section>
+      <section>
+        <h2>Manual, live control</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  // Must use pins 5 or 6 for PWM
+  var left = new five.Servo({pin: "A5"});
+  var right = new five.Servo({pin: "A6", invert: true});
+  var servos = new five.Servos([left, right]);
+
+  var commands = {
+    left: function() { left.cw();right.ccw(); },
+    right: function() { left.ccw();right.cw(); },
+    fwd: function(speed) { servos.cw(speed); },
+    rev: function(speed) { servos.ccw(speed); },
+    stop: function() { servos.stop(); }
+  };
+
+  this.repl.inject(commands);
+});
+</code></pre>
+        <pre><code>t2 run led-boss.js</code></pre>
+      </section>
+
+      <section>
+        <h2>In the REPL</h2>
+        <pre><code contenteditable="" class="undefined">> led.on();
+
+> led.off();
+
+> led.blink();
+
+> led.stop();
+
+> led.pulse();
+</code></pre>
+      </section>
+      <section>
+        <br><br><br>
+        <h1>
+          Create Digital Input
+        </h1>
+        <h1>
+          0|1
+        </h1>
+      </section>
+
+      <section>
+        <br><br>
+        <div class="stretch">
+          <a href="assets/button_bb.png" target="_blank">
+            <img src="assets/button_bb.png" style="width: 800px">
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Respond to Button Press</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var button = new five.Button("A0");
+
+  button.on("press", function() { console.log("Button Pressed!")});
+  button.on("release", function() { console.log("Button Released!")});
+});
+</code></pre>
+        <pre><code>t2 run button.js</code></pre>
+        <h4>
+          <a href="http://johnny-five.io/api/button" target="_blank" class="roll"><span data-title="http://johnny-five.io/api/button">http://johnny-five.io/api/button</span></a>
+        </h4>
+      </section>
+
+      <section>
+        <h2>Respond to Button Release</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var button = new five.Button("A0");
+
+  button.on("press", function() { console.log("Button Pressed!")});
+  button.on("release", function() { console.log("Button Released!")});
+});
+</code></pre>
+        <pre><code>t2 run button.js</code></pre>
+      </section>
+
+      <section>
+        <h2>Convert Input to Output</h2>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led("A5");
+  var button = new five.Button("A0");
+
+  button.on("press", function() { led.on() });
+  button.on("release", function() { led.off() });
+});
+</code></pre>
+        <pre><code>t2 run button.js</code></pre>
+      </section>
+
+      <section>
+        <h3>Multiple States of Input to Multiple States of Output</h3>
+        <pre><code contenteditable="" class="php">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led("A5");
+  var button = new five.Button("A0");
+
+  button.on("press", function() { led.on() });
+  button.on("hold", function() { led.blink(50) });
+  button.on("release", function() { led.stop().off() });
+});
+</code></pre>
+        <pre><code>t2 run button.js</code></pre>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h3>
+          Observe Analog Input
+        </h3>
+        <h4>Tessel 2 analog in pins:</h4>
+        <ul>
+          <li>A4, A7</li>
+          <li>B0 - B7</li>
+        </ul>
+      </section>
+
+      <section>
+        <a href="assets/potentiometer_bb.png" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/potentiometer_bb.png" target="_blank"><img src="assets/potentiometer_bb.png" style="width: 800px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Receive Values From a Sensor</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var rotary = new five.Sensor("B0");
+
+  rotary.on("change", function() {
+    console.log("Sensor changed!", this.value);
+  });
+});
+</code></pre>
+        <pre><code>t2 run sensor.js</code></pre>
+        <h4>
+          <a href="http://johnny-five.io/api/sensor" target="_blank" class="roll"><span data-title="http://johnny-five.io/api/sensor">http://johnny-five.io/api/sensor</span></a>
+        </h4>
+
+      </section>
+
+      <section>
+        <br><br><br>
+        <h2><code>
+            npm install barcli
+        </code></h2>
+        <h4>(say: barklee)</h4>
+        <h4>
+          <a href="https://github.com/dtex/barcli" target="_blank" class="roll"><span data-title="https://github.com/dtex/barcli">https://github.com/dtex/barcli</span></a>
+        </h4>
+
+      </section>
+
+      <section>
+        <h3>Analog Data</h3>
+        <pre><code contenteditable="" class="javascript">var Barcli = require("barcli");
+var five = require("johnny-five");
+
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var range = [0, 1024];
+  var graph = new Barcli({
+    label: "Potentiometer",
+    range: range,
+  });
+  var rotary = new five.Sensor("B0");
+
+  rotary.scale(0, 1024).on("change", function() {
+    graph.update(this.value);
+  });
+});
+</code></pre>
+        <pre><code>t2 run sensor.js</code></pre>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h1>Convert 10-bit Input <br>to 8-bit Output</h1>
+      </section>
+
+      <section>
+        <br><br>
+        <h1>
+          0-1023
+        </h1>
+        <h1>
+          <code>~</code>5V in 10 bits
+        </h1>
+      </section>
+
+      <section>
+        <h2>
+          Side Quest!
+        </h2>
+        <h2>
+          Open Developer Tools Console in either Firefox, Chrome or Edge, paste this:
+        </h2>
+        <br>
+        <pre><code>
+            0b1111111111
+        </code></pre>
+        <br>
+        <h2>
+          Hit &lt;enter&gt;
+        </h2>
+      </section>
+
+      <section>
+        <br>
+        <h2 style="text-align:left"><code>
+            0b00000000 (0)
+            0b01000000 (64)
+            0b01111111 (127*)
+            0b10111111 (191)
+            0b11111111 (255*)
+        </code></h2>
+      </section>
+
+
+      <section>
+        <h2><code>
+            0b1111111111
+            0b0011111111
+        </code></h2>
+      </section>
+
+      <section>
+        <h2 style="text-align:left"><code>
+            0b1111111111 &gt;&gt; 2
+            0b0011111111
+            0b11111111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            255&nbsp;
+        </code></h2>
+        <br>
+      </section>
+
+      <section>
+        <h1>PWM</h1>
+
+        <h3>
+          Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. <br>Digital control
+          is used to create a square wave, a signal switched between on and off.
+          <br> - Arduino.cc
+        </h3>
+
+      </section>
+
+      <section>
+        <a href="assets/pwm.gif" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/pwm.gif" target="_blank"><img src="assets/pwm.gif" style="width: 400px;background-color:#ffffff"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Convert 10-bit Analog Input to 8-bit PWM Output</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var led = new five.Led(11);
+  var rotary = new five.Sensor("B0");
+
+  rotary.on("change", function() {
+    // Analog sensors produce a 10-bit value,
+    // but led brightness is an 8-bit PWM value.
+    // Convert by shifting the value's bits
+    // two places to the right.
+    led.brightness(this.value >> 2);
+  });
+});
+</code></pre>
+        <pre><code>t2 run sensor.js</code></pre>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h1>Observe The Environment</h1>
+      </section>
+
+
+      <section>
+        <a href="assets/TMP36.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/TMP36.jpg" target="_blank"><img src="assets/TMP36.jpg" style="width: 800px"></a>
+        </a>
+      </section>
+
+
+      <section>
+        <a href="assets/tmp36_bb.png" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/tmp36_bb.png" target="_blank"><img src="assets/tmp36_bb.png" style="width: 800px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Temperature</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var temp = new five.Temperature({
+    controller: "TMP36",
+    pin: "B0"
+  });
+
+  temp.on("change", function() {
+    console.log(this.celsius + "°C");
+  });
+});
+</code></pre>
+        <pre><code>t2 run temperature.js</code></pre>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h1>Convert Temperature to RGB</h1>
+      </section>
+
+      <section>
+        <a href="assets/diffused-rgb-led.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/diffused-rgb-led.jpg" target="_blank"><img src="assets/diffused-rgb-led.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+
+      <section>
+        <a href="assets/temperature-rgb.png" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/temperature-rgb.png" target="_blank"><img src="assets/temperature-rgb.png" style="width: 800px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Temperature Display</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var temp = new five.Temperature({
+    controller: "TMP36",
+    pin: "B0"
+  });
+
+  var rgb = new five.Led.RGB({
+    pins: ["A0", "A1", "A2"],
+    isAnode: true
+  });
+
+  temp.on("change", function() {
+    // Write an algorithm that converts temperature (F, K or C)
+    // into an RGB hex value.
+    rgb.color(??????);
+  });
+});
+</code></pre>
+      </section>
+
+
+      <section>
+        <h1>
+          Break
+        </h1>
+      </section>
+
+
+      <section>
+        <h1>
+          Let's Build A Robot
+        </h1>
+      </section>
+
+      <section>
+        <a href="assets/1.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/1.jpg" target="_blank"><img src="assets/1.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/2.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/2.jpg" target="_blank"><img src="assets/2.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/3.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/3.jpg" target="_blank"><img src="assets/3.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/blade.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/blade.jpg" target="_blank"><img src="assets/blade.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h2>
+          Add glue &amp; let it dry
+        </h2>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h1>Control a Continuous Rotation Servo</h1>
+      </section>
+
+      <section>
+        <a href="assets/servo_bb.png" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/servo_bb.png" target="_blank"><img src="assets/servo_bb.png" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h3>Controlling a Servo</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var servo = new five.Servo.({
+    type: "continuous",
+    pin: "A5"
+  });
+
+  this.repl.inject({
+    servo: servo
+  });
+
+});
+					</code></pre>
+        <pre><code>t2 run servo.js</code></pre>
+      </section>
+
+      <section>
+        <h2>Trim the servo</h2>
+        <a href="assets/trim.JPG" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/trim.JPG" target="_blank"><img src="assets/trim.JPG" style="width: 400px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h2>In the REPL</h2>
+        <pre><code contenteditable="" class="undefined">> servo.cw();
+
+> servo.stop();
+
+> servo.ccw();
+
+> servo.stop();
+
+> servo.ccw(0.5);
+
+> servo.stop();
+</code></pre>
+      </section>
+
+      <section>
+        <a href="assets/4.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/4.jpg" target="_blank"><img src="assets/4.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/5.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/5.jpg" target="_blank"><img src="assets/5.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/6.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/6.jpg" target="_blank"><img src="assets/6.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/7.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/7.jpg" target="_blank"><img src="assets/7.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/8.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/8.jpg" target="_blank"><img src="assets/8.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/9.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/9.jpg" target="_blank"><img src="assets/9.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/wheels.JPG" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/wheels.JPG" target="_blank"><img src="assets/wheels.JPG" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/wheels2.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/wheels2.jpg" target="_blank"><img src="assets/wheels2.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/AA_Batteries.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/AA_Batteries.jpg" target="_blank"><img src="assets/AA_Batteries.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/posts.JPG" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/posts.JPG" target="_blank"><img src="assets/posts.JPG" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <a href="assets/arduinoOnPosts.jpg" target="_blank">
+          <a href="http://dtex.github.io/nbd2016/assets/arduinoOnPosts.jpg" target="_blank"><img src="assets/arduinoOnPosts.jpg" style="width: 600px"></a>
+        </a>
+      </section>
+
+      <section>
+        <h2>
+          Connect The Tessel to your battery via USB.
+        </h2>
+      </section>
+
+
+      <section>
+        <h3>Make it go!</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var left = new five.Servo({pin: "A5"});
+  var right = new five.Servo({pin: "A6", invert: true});
+  var servos = new five.Servos([left, right]);
+
+  servos.cw();
+
+  this.wait(3000, function() {
+    servos.stop();
+  });
+});
+</code></pre>
+        <p class="note">Updated code on Tessel</p>
+        <pre><code class="javascript">t2 push bot.js</code></pre>
+      </section>
+
+      <section>
+        <h3>Live Control</h3>
+        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+  var left = new five.Servo({pin: "A5"});
+  var right = new five.Servo({pin: "A6", invert: true});
+  var servos = new five.Servos([left, right]);
+
+  var commands = {
+    left: function() { left.cw();right.ccw(); },
+    right: function() { left.ccw();right.cw(); },
+    fwd: function(speed) { servos.cw(speed); },
+    rev: function(speed) { servos.ccw(speed); },
+    stop: function() { servos.stop(); }
+  };
+
+  this.repl.inject(commands);
+});
+</code></pre>
+        <p class="note">Updated code on Tessel</p>
+        <pre><code class="javascript">t2 push bot.js</code></pre>
+      </section>
+      <section>
+        <h2>Try These!</h2>
+        <pre><code contenteditable="" class="undefined">&gt; fwd();
+
+&gt; stop();
+
+&gt; rev(0.5);
+
+&gt; stop();
+
+&gt; left();
+
+&gt; stop();
+</code></pre>
+      </section>
+
+      <section class="future" style="display: block;">
+        <h2>In Case of Emergency!</h2>
+        <h3><a href="https://github.com/dtex/ard-sumobot" target="_blank" class="roll"><span data-title="https://github.com/dtex/ard-sumobot">https://github.com/dtex/ard-sumobot</span></a></h3>
+      </section>
+
+      <section>
+        <a href="assets/sgier-johnny-five.png" target="_blank">
+          <a href="http://johnny-five.io/" target="_blank"><img src="assets/sgier-johnny-five.png" style="width: 450px"></a>
+        </a>
+
+        <h3><a href="http://johnny-five.io/" target="_blank" data-destyle="" class="">johnny-five.io</a></h3>
+
+      </section>
+
+      <section class="future" style="display: block;">
+        <br>
+        <h1>Let's get ready to robot rumble!!!</h1>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+              history: true,
+
+              // More info https://github.com/hakimel/reveal.js#dependencies
+              dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+              ]
+            });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+.reveal {
+	p.note {
+		width: 90%;
+		margin: 20px auto;
+		
+		font-size: 0.6em;
+		text-align: left;
+	}
+
+	table.flag_details {
+		font-size: 0.8em;
+	}
+
+	span.hljs.inline {
+		display: inline;
+	}
+
+	img.bg-transparent {
+		background: transparent;
+	}
+
+	img.no-border {
+		border: none;
+	}
+
+}
