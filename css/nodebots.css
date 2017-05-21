@@ -11,7 +11,14 @@
   display: inline; }
 
 .reveal img.bg-transparent {
-  background: transparent; }
+  background: transparent;
+  box-shadow: none; }
 
 .reveal img.no-border {
   border: none; }
+
+.jf-yellow {
+  color: #f3df49; }
+
+table.specs {
+  font-size: 0.8em; }

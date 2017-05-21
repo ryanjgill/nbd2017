@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>reveal.js</title>
+  <title>NodeBots Day 2017</title>
 
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="css/theme/black.css">
@@ -33,7 +33,7 @@
           <img src="assets/nodebot-450x450.png" style="width: 450px">
         </a>
 
-        <h3><a href="http://nodebots.io/" target="_blank" data-destyle="" class="">nodebots.io</a></h3>
+        <h3><a href="http://nodebots.io/" target="_blank" >nodebots.io</a></h3>
         <script>
           // Delicously hacky. Look away.
           if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) document.write('<p style="color: rgba(0,0,0,0.3); text-shadow: none;">(' + 'Tap to navigate' + ')</p>');
@@ -45,13 +45,13 @@
           <a href="http://johnny-five.io/" target="_blank"><img src="assets/sgier-johnny-five.png" style="width: 450px"></a>
         </a>
 
-        <h3><a href="http://johnny-five.io/" target="_blank" data-destyle="" class="">johnny-five.io</a></h3>
+        <h3><a href="http://johnny-five.io/" target="_blank" >johnny-five.io</a></h3>
 
       </section>
 
 
       <section>
-        <h1>Follow Along</h1>
+        <h2>Follow Along</h2>
         <a href="https://ryanjgill.github.io/nbd2017/" target="_blank">https://ryanjgill.github.io/nbd2017/</a>
       </section>
 
@@ -65,21 +65,21 @@
       </section>
 
       <section>
-        <h1>
+        <h2>
           Important Points<br> To Consider
-        </h1>
+        </h2>
       </section>
 
       <section>
-        <h1>
+        <h2>
           The only dumb question is the one you never asked.
-        </h1>
+        </h2>
       </section>
 
       <section>
-        <h1>
+        <h2>
           Doesn't work? <br> It's probably the hardware.
-        </h1>
+        </h2>
       </section>
 
       <section>
@@ -145,7 +145,7 @@
         <section>
           <h3>Push a file</h3>
           <pre><code contenteditable="">t2 push index.js</code></pre>
-          <image src="assets/t2_push.gif" class="stretch"/>
+          <img src="assets/t2_push.gif" class="stretch"/>
         </section>
         <section>
           <pre><code>t2 push name_of_file</code></pre>
@@ -198,121 +198,243 @@
       </section>
 
       <section>
-        <h1>Let's learn about your Johnny-Five Starter Kit!</h1>
+        <section>
+          <h3>Creat An Access Point</h3>
+          <pre><code contenteditable="">t2 ap -n NAME -p PASSWORD</code></pre>
+          <image src="assets/t2_ap.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 ap -n SSID -p PASSWORD</code></pre>
+          <table class="flag_details">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-n</td>
+                <td>name of network to create</td>
+              </tr>
+              <tr>
+                <td>-p</td>
+                <td>optional password for network</td>
+              </tr>
+              <tr>
+                <td>-s</td>
+                <td>optional security type (wep, psk, psk2 wpa, wpa2)</td>
+              </tr>
+              <tr>
+                <td>--off</td>
+                <td>turn off current access point</td>
+              </tr>
+              <tr>
+                <td>--on</td>
+                <td>turn on most recent access point</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">NOTE: try turning off wifi before creating access point. 
+            <pre><code>t2 wifi --off</code></pre>
+          </p>
+        </section>
       </section>
 
       <section>
-        <h3>Tessel 2</h3>
-        <div class="stretch">
-          <a href="assets/tessel.png" target="_blank">
-            <img src="assets/tessel.png">
-          </a>
-        </div>
+        <section>
+          <h3>Using Wifi</h3>
+          <pre><code contenteditable="">t2 wifi</code></pre>
+          <image src="assets/t2_wifi.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 wifi -n SSID -p PASSWORD</code></pre>
+          <table class="flag_details">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-l</td>
+                <td>list available networks</td>
+              </tr>
+              <tr>
+                <td>-n</td>
+                <td>network SSID</td>
+              </tr>
+              <tr>
+                <td>-p</td>
+                <td>password for wifi</td>
+              </tr>
+              <tr>
+                <td>-s</td>
+                <td>security type (wep, psk, psk2 wpa, wpa2)</td>
+              </tr>
+              <tr>
+                <td>--off</td>
+                <td>disconnect from wifi</td>
+              </tr>
+              <tr>
+                <td>--on</td>
+                <td>connect to last configured network</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">NOTE: try turning off access point before connecting to wifi. 
+            <pre><code>t2 ap --off</code></pre>
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h2>Let's learn about your <span class="jf-yellow">Johnny-Five</span> Starter Kit!</h2>
+      </section>
+
+      <section>
+         <section>
+          <h3>Tessel 2</h3>
+          <div class="stretch">
+            <a href="assets/tessel.png" target="_blank">
+              <img src="assets/tessel.png">
+            </a>
+          </div>
+        </section>
+        <section>
+					<h4>Hardware Specs</h4>
+					<table class="specs">
+						<thead>
+							<tbody>
+								<tr>
+									<td>CPU</td>
+									<td>MIPS 24KEc 580MHz</td>
+								</tr>
+								<tr>
+									<td>RAM</td>
+									<td>64MB</td>
+								</tr>
+								<tr>
+									<td>Flash</td>
+									<td>32MB</td>
+								</tr>
+								<tr>
+									<td>WiFi</td>
+									<td>b/g/n 2.4GHz</td>
+								</tr>
+								<tr>
+									<td>Ethernet</td>
+									<td>10/100Mbps</td>
+								</tr>
+								<tr>
+									<td>USB</td>
+									<td>2 x USB 2.0</td>
+								</tr>
+								<tr>
+									<td>MCU</td>
+									<td>ARM Cortex M0 48MHz</td>
+								</tr>
+							</tbody>
+					</table>
+				</section>
       </section>
 
       <section>
         <h3>Breadboard: Solderless wiring</h3>
-        <a href="assets/kit-001.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/kit-001.jpg" target="_blank"><img src="assets/kit-001.jpg" style="width: 600px"></a>
-        </a>
+        <div class="stretch">
+          <img src="assets/kit-001.jpg"/>
+        </div> 
       </section>
 
       <section>
         <h3>Breadboard: Electrical Connections</h3>
-        <a href="assets/breadboard-conections.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/breadboard-conections.jpg" target="_blank"><img src="assets/breadboard-conections.jpg" style="width: 600px"></a>
-        </a>
+        <div class="stretch">
+          <img src="assets/breadboard-conections.jpg"/>
+        </div>
       </section>
 
       <section>
         <h3>Resistors: Reduce Current Flow, lower Voltage Level</h3>
-        <a href="assets/kit-007.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/kit-007.jpg" target="_blank"><img src="assets/kit-007.jpg" style="width: 600px"></a>
-        </a>
+        <div class="stretch">
+          <img src="assets/kit-007.jpg"/>
+        </div>
       </section>
 
       <section>
         <h3>LEDs: Light Up Your Life</h3>
-        <a href="assets/kit-008.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/kit-008.jpg" target="_blank"><img src="assets/kit-008.jpg" style="width: 600px"></a>
-        </a>
+        <div class="stretch">
+          <img src="assets/kit-008.jpg"/>
+        </div>
       </section>
 
       <section>
         <h3>Buttons, Potentiometer</h3>
-        <a href="assets/kit-010.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/kit-010.jpg" target="_blank"><img src="assets/kit-010.jpg" style="width: 600px"></a>
-        </a>
+        <div class="stretch">
+          <img src="assets/kit-010.jpg"/>
+        </div>
       </section>
 
       <section>
         <h3>Sensor: Temperature</h3>
-        <a href="assets/kit-011.jpg" target="_blank">
-          <img src="assets/kit-011.jpg" style="width: 600px">
-        </a>
-      </section>
-
-      <section>
-        <h3>Jumper Wires! </h3>
-        <a href="assets/kit-020.jpg" target="_blank">
-          <img src="assets/kit-020.jpg" style="width: 600px">
-        </a>
-      </section>
-
-
-      <section>
-        <h1>
-          Ready To Make Stuff?
-        </h1>
-      </section>
-
-      <section>
-        <h1>
-          Create Output
-        </h1>
-      </section>
-
-      <section>
         <div class="stretch">
-          <a href="assets/tessel-led-blink.png" target="_blank">
-            <img src="assets/tessel-led-blink.png">
-          </a>
+          <img src="assets/kit-011.jpg"/>
         </div>
-        
+      </section>
+
+      <section>
+        <h3>Jumper Wires!</h3>
+        <div class="stretch">
+          <img src="assets/kit-020.jpg">
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Ready To Make Stuff?</h2>
+      </section>
+
+      <section>
+        <h2>Create Output</h2>
       </section>
 
       <section>
         <h2>
-          Connect The Tessel to your computer via USB.
+          Connect The Tessel to your computer via USB
         </h2>
       </section>
 
 
       <section>
-        <h2>
-          Make a project directory and navigate<br>there in Shell/Command Prompt
-        </h2>
+        <h3>Create working directory</h3>
+        <pre><code contenteditable="">mkdir tessel_fun && cd tessel_fun</code></pre>
+        <image src="assets/mkdir.gif" class="stretch"/>
       </section>
 
       <section>
         <h3>Initialize project</h3>
         <pre><code class="javascript">t2 init</code></pre>
+        <image src="assets/t2_init.gif" class="stretch"/>
       </section>
 
       <section>
-        <div class="stretch">
-          <a href="assets/sgier-johnny-five.png" target="_blank">
-            <img src="assets/sgier-johnny-five.png">
-          </a>
-        </div>
         <pre><code>npm install johnny-five tessel-io</code></pre>
+        <img src="assets/sgier-johnny-five.png">
       </section>
 
       <section>
-        <h3>
-          Make a new file.
-        </h3>
-         <pre><code>touch blink.js</code></pre>
+        <h3>Make a new file</h3>
+        <p class="note">Mac users:</p>
+        <pre><code>touch blink.js</code></pre>
+        <p class="note">Windows users:</p>
+        <pre><code>type nul > blink.js</code></pre>
+      </section>
+
+      <section>
+        <p>Connect positive lead (long) to pin A0 and the negative lead (short) to ground.</p>
+        <div class="stretch">
+          <img src="assets/tessel-led-blink.png">
+        </div>
       </section>
 
       <section>
@@ -366,55 +488,10 @@ board.on("ready", function() {
 </code></pre>
         <pre><code>t2 run led-blink-slow.js</code></pre>
       </section>
-      <section>
-        <h2>Manual, live control</h2>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  // Must use pins 5 or 6 for PWM
-  var left = new five.Servo({pin: "A5"});
-  var right = new five.Servo({pin: "A6", invert: true});
-  var servos = new five.Servos([left, right]);
-
-  var commands = {
-    left: function() { left.cw();right.ccw(); },
-    right: function() { left.ccw();right.cw(); },
-    fwd: function(speed) { servos.cw(speed); },
-    rev: function(speed) { servos.ccw(speed); },
-    stop: function() { servos.stop(); }
-  };
-
-  this.repl.inject(commands);
-});
-</code></pre>
-        <pre><code>t2 run led-boss.js</code></pre>
-      </section>
 
       <section>
-        <h2>In the REPL</h2>
-        <pre><code contenteditable="" class="undefined">> led.on();
-
-> led.off();
-
-> led.blink();
-
-> led.stop();
-
-> led.pulse();
-</code></pre>
-      </section>
-      <section>
-        <br><br><br>
-        <h1>
-          Create Digital Input
-        </h1>
-        <h1>
-          0|1
-        </h1>
+        <h2>Create Digital Input</h2>
+        <h2>0|1</h2>
       </section>
 
       <section>
@@ -445,24 +522,6 @@ board.on("ready", function() {
         <h4>
           <a href="http://johnny-five.io/api/button" target="_blank" class="roll"><span data-title="http://johnny-five.io/api/button">http://johnny-five.io/api/button</span></a>
         </h4>
-      </section>
-
-      <section>
-        <h2>Respond to Button Release</h2>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var button = new five.Button("A0");
-
-  button.on("press", function() { console.log("Button Pressed!")});
-  button.on("release", function() { console.log("Button Released!")});
-});
-</code></pre>
-        <pre><code>t2 run button.js</code></pre>
       </section>
 
       <section>
@@ -505,7 +564,6 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <br><br><br>
         <h3>
           Observe Analog Input
         </h3>
@@ -517,9 +575,9 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <a href="assets/potentiometer_bb.png" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/potentiometer_bb.png" target="_blank"><img src="assets/potentiometer_bb.png" style="width: 800px"></a>
-        </a>
+        <!-- TODO: Replace with tessel -->
+        <h4>REPLACE WITH TESSEL</h4>
+        <img src="assets/potentiometer_bb.png">
       </section>
 
       <section>
@@ -584,35 +642,22 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <br><br><br>
-        <h1>Convert 10-bit Input <br>to 8-bit Output</h1>
+        <h2>Convert 10-bit Input <br>to 8-bit Output</h2>
       </section>
 
       <section>
-        <br><br>
-        <h1>
-          0-1023
-        </h1>
-        <h1>
-          <code>~</code>5V in 10 bits
-        </h1>
+        <h2>10 bits</h2>
+        <h3>0 - 1023</h3>
+        <h3>0V ~ 3.3V</h3>
       </section>
 
       <section>
         <h2>
           Side Quest!
         </h2>
-        <h2>
-          Open Developer Tools Console in either Firefox, Chrome or Edge, paste this:
-        </h2>
-        <br>
-        <pre><code>
-            0b1111111111
-        </code></pre>
-        <br>
-        <h2>
-          Hit &lt;enter&gt;
-        </h2>
+        <p>Open Developer Tools Console in either Firefox, Chrome or Edge, paste this:</p>
+        <pre><code> 0b1111111111</code></pre>
+        <h4>Hit &lt;enter&gt;</h4>
       </section>
 
       <section>
@@ -645,20 +690,19 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <h1>PWM</h1>
+        <h2>PWM</h2>
 
-        <h3>
+        <p>
           Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. <br>Digital control
-          is used to create a square wave, a signal switched between on and off.
-          <br> - Arduino.cc
-        </h3>
+          is used to create a square wave, a signal switched between on and off. <br> - Arduino.cc
+        </p>
+        <img src="assets/pwm_duty_cycle.gif" alt="">
+        
 
       </section>
 
       <section>
-        <a href="assets/pwm.gif" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/pwm.gif" target="_blank"><img src="assets/pwm.gif" style="width: 400px;background-color:#ffffff"></a>
-        </a>
+        <img src="assets/pwm.gif" style="width: 400px;background-color:#ffffff">
       </section>
 
       <section>
@@ -686,22 +730,19 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <br><br><br>
-        <h1>Observe The Environment</h1>
+        <h2>Observe The Environment</h2>
       </section>
 
 
       <section>
-        <a href="assets/TMP36.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/TMP36.jpg" target="_blank"><img src="assets/TMP36.jpg" style="width: 800px"></a>
-        </a>
+       <img src="assets/TMP36.jpg">
       </section>
 
 
       <section>
-        <a href="assets/tmp36_bb.png" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/tmp36_bb.png" target="_blank"><img src="assets/tmp36_bb.png" style="width: 800px"></a>
-        </a>
+        <!-- TODO: Replace with tessel -->
+        <h4>REPLACE WITH TESSEL</h4>
+        <img src="assets/tmp36_bb.png">
       </section>
 
       <section>
@@ -727,292 +768,37 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <br><br><br>
-        <h1>Convert Temperature to RGB</h1>
-      </section>
-
-      <section>
-        <a href="assets/diffused-rgb-led.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/diffused-rgb-led.jpg" target="_blank"><img src="assets/diffused-rgb-led.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-
-      <section>
-        <a href="assets/temperature-rgb.png" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/temperature-rgb.png" target="_blank"><img src="assets/temperature-rgb.png" style="width: 800px"></a>
-        </a>
-      </section>
-
-      <section>
-        <h3>Temperature Display</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var temp = new five.Temperature({
-    controller: "TMP36",
-    pin: "B0"
-  });
-
-  var rgb = new five.Led.RGB({
-    pins: ["A0", "A1", "A2"],
-    isAnode: true
-  });
-
-  temp.on("change", function() {
-    // Write an algorithm that converts temperature (F, K or C)
-    // into an RGB hex value.
-    rgb.color(??????);
-  });
-});
-</code></pre>
-      </section>
-
-
-      <section>
-        <h1>
+        <h2>
           Break
-        </h1>
+        </h2>
       </section>
 
-
       <section>
-        <h1>
+        <h2>
           Let's Build A Robot
-        </h1>
-      </section>
-
-      <section>
-        <a href="assets/1.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/1.jpg" target="_blank"><img src="assets/1.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/2.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/2.jpg" target="_blank"><img src="assets/2.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/3.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/3.jpg" target="_blank"><img src="assets/3.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/blade.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/blade.jpg" target="_blank"><img src="assets/blade.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <h2>
-          Add glue &amp; let it dry
         </h2>
       </section>
 
       <section>
-        <br><br><br>
-        <h1>Control a Continuous Rotation Servo</h1>
+        <img src="assets/peewee_bot.jpg" style="width: 600px">
       </section>
 
       <section>
-        <a href="assets/servo_bb.png" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/servo_bb.png" target="_blank"><img src="assets/servo_bb.png" style="width: 600px"></a>
-        </a>
+        <img src="assets/peewee_bot_parts.jpg" style="width: 600px">
       </section>
 
       <section>
-        <h3>Controlling a Servo</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var servo = new five.Servo.({
-    type: "continuous",
-    pin: "A5"
-  });
-
-  this.repl.inject({
-    servo: servo
-  });
-
-});
-					</code></pre>
-        <pre><code>t2 run servo.js</code></pre>
+        <img src="assets/peewee_bot_front_view.jpg" style="width: 600px">
       </section>
 
       <section>
-        <h2>Trim the servo</h2>
-        <a href="assets/trim.JPG" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/trim.JPG" target="_blank"><img src="assets/trim.JPG" style="width: 400px"></a>
-        </a>
+        <img src="assets/peewee_bot_side_view.jpg" style="width: 600px">
       </section>
 
-      <section>
-        <h2>In the REPL</h2>
-        <pre><code contenteditable="" class="undefined">> servo.cw();
-
-> servo.stop();
-
-> servo.ccw();
-
-> servo.stop();
-
-> servo.ccw(0.5);
-
-> servo.stop();
-</code></pre>
-      </section>
-
-      <section>
-        <a href="assets/4.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/4.jpg" target="_blank"><img src="assets/4.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/5.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/5.jpg" target="_blank"><img src="assets/5.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/6.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/6.jpg" target="_blank"><img src="assets/6.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/7.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/7.jpg" target="_blank"><img src="assets/7.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/8.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/8.jpg" target="_blank"><img src="assets/8.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/9.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/9.jpg" target="_blank"><img src="assets/9.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/wheels.JPG" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/wheels.JPG" target="_blank"><img src="assets/wheels.JPG" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/wheels2.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/wheels2.jpg" target="_blank"><img src="assets/wheels2.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/AA_Batteries.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/AA_Batteries.jpg" target="_blank"><img src="assets/AA_Batteries.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/posts.JPG" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/posts.JPG" target="_blank"><img src="assets/posts.JPG" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <a href="assets/arduinoOnPosts.jpg" target="_blank">
-          <a href="http://dtex.github.io/nbd2016/assets/arduinoOnPosts.jpg" target="_blank"><img src="assets/arduinoOnPosts.jpg" style="width: 600px"></a>
-        </a>
-      </section>
-
-      <section>
-        <h2>
-          Connect The Tessel to your battery via USB.
-        </h2>
-      </section>
-
-
-      <section>
-        <h3>Make it go!</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var left = new five.Servo({pin: "A5"});
-  var right = new five.Servo({pin: "A6", invert: true});
-  var servos = new five.Servos([left, right]);
-
-  servos.cw();
-
-  this.wait(3000, function() {
-    servos.stop();
-  });
-});
-</code></pre>
-        <p class="note">Updated code on Tessel</p>
-        <pre><code class="javascript">t2 push bot.js</code></pre>
-      </section>
-
-      <section>
-        <h3>Live Control</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var board = new five.Board();
-
-board.on("ready", function() {
-  var left = new five.Servo({pin: "A5"});
-  var right = new five.Servo({pin: "A6", invert: true});
-  var servos = new five.Servos([left, right]);
-
-  var commands = {
-    left: function() { left.cw();right.ccw(); },
-    right: function() { left.ccw();right.cw(); },
-    fwd: function(speed) { servos.cw(speed); },
-    rev: function(speed) { servos.ccw(speed); },
-    stop: function() { servos.stop(); }
-  };
-
-  this.repl.inject(commands);
-});
-</code></pre>
-        <p class="note">Updated code on Tessel</p>
-        <pre><code class="javascript">t2 push bot.js</code></pre>
-      </section>
-      <section>
-        <h2>Try These!</h2>
-        <pre><code contenteditable="" class="undefined">&gt; fwd();
-
-&gt; stop();
-
-&gt; rev(0.5);
-
-&gt; stop();
-
-&gt; left();
-
-&gt; stop();
-</code></pre>
-      </section>
-
+     
       <section class="future" style="display: block;">
         <h2>In Case of Emergency!</h2>
-        <h3><a href="https://github.com/dtex/ard-sumobot" target="_blank" class="roll"><span data-title="https://github.com/dtex/ard-sumobot">https://github.com/dtex/ard-sumobot</span></a></h3>
+        
       </section>
 
       <section>
@@ -1020,13 +806,35 @@ board.on("ready", function() {
           <a href="http://johnny-five.io/" target="_blank"><img src="assets/sgier-johnny-five.png" style="width: 450px"></a>
         </a>
 
-        <h3><a href="http://johnny-five.io/" target="_blank" data-destyle="" class="">johnny-five.io</a></h3>
+        <h3><a href="http://johnny-five.io/" target="_blank" >johnny-five.io</a></h3>
 
       </section>
 
       <section class="future" style="display: block;">
-        <br>
-        <h1>Let's get ready to robot rumble!!!</h1>
+        <h2>Let's get ready to race!!!</h2>
+      </section>
+
+      <section class="future" style="display: block;">
+        <h2>Additional Resources</h2>
+        <ul>
+          <li>
+            <a href="http://johnny-five.io/">Johnny-Five.io</a>
+          </li>
+          <li>
+            <a href="https://nodejshouston.github.io/bots/">NodeBots Day Houston</a>
+          </li>
+          <li>
+            <a href="https://learn.sparkfun.com/tutorials/experiment-guide-for-the-johnny-five-inventors-kit/all">SparkFun Inentors Guide</a>
+          </li>
+          <li>
+            <a href="https://tessel.gitbooks.io/t2-docs/content/">Tessel Docs</a>
+          </li>
+          <li>
+            <a href="https://tessel.io/modules#tessel-modules">Tessel Modules</a>
+          </li>
+
+         
+        </ul>
       </section>
 
     </div>

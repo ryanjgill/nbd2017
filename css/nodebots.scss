@@ -17,10 +17,19 @@
 
 	img.bg-transparent {
 		background: transparent;
+		box-shadow: none;
 	}
 
 	img.no-border {
 		border: none;
 	}
 
+}
+
+.jf-yellow {
+	color: rgb(243,223,73);
+}
+
+table.specs {
+	font-size: 0.8em;
 }
