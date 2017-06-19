@@ -83,6 +83,63 @@
       </section>
 
       <section>
+        <h2>Overview</h2>
+        <ul>
+          <li>Tessel 2</li>
+          <li>T2 CLI</li>
+          <li>Tessel Experiments</li>
+          <li>Build a NodeBot</li>
+        </ul>
+      </section>
+
+      <section>
+         <section>
+          <h3>Tessel 2</h3>
+          <div class="stretch">
+            <a href="assets/tessel.png" target="_blank">
+              <img src="assets/tessel.png">
+            </a>
+          </div>
+        </section>
+        <section>
+					<h4>Hardware Specs</h4>
+					<table class="specs">
+						<thead>
+							<tbody>
+								<tr>
+									<td>CPU</td>
+									<td>MIPS 24KEc 580MHz</td>
+								</tr>
+								<tr>
+									<td>RAM</td>
+									<td>64MB</td>
+								</tr>
+								<tr>
+									<td>Flash</td>
+									<td>32MB</td>
+								</tr>
+								<tr>
+									<td>WiFi</td>
+									<td>b/g/n 2.4GHz</td>
+								</tr>
+								<tr>
+									<td>Ethernet</td>
+									<td>10/100Mbps</td>
+								</tr>
+								<tr>
+									<td>USB</td>
+									<td>2 x USB 2.0</td>
+								</tr>
+								<tr>
+									<td>MCU</td>
+									<td>ARM Cortex M0 48MHz</td>
+								</tr>
+							</tbody>
+					</table>
+				</section>
+      </section>
+
+      <section>
         <h2>Getting started with the Tessel</h2>
         <div class="stretch">
           <img src="assets/tessel_logo.png" alt="Tessel Logo" class="bg-transparent no-border">
@@ -109,7 +166,7 @@
         <section>
           <pre><code>t2 run name_of_file</code></pre>
           <p class="note">Copy the file and its
-           dependencies into Tessel's RAM & run immediately. Use this during
+            dependencies into Tessel's RAM & run immediately. Use this during
             development of your device application.
           </p>
           <table class="flag_details">
@@ -290,54 +347,18 @@
       </section>
 
       <section>
-        <h2>Let's learn about your <span class="jf-yellow">Johnny-Five</span> Starter Kit!</h2>
+        <h2>Let's learn about your</h2>
+        <h2><span class="jf-yellow">NBD Houston</span></h2>
+        <h2>Starter Kit!</h2>
       </section>
 
       <section>
-         <section>
-          <h3>Tessel 2</h3>
-          <div class="stretch">
-            <a href="assets/tessel.png" target="_blank">
-              <img src="assets/tessel.png">
-            </a>
-          </div>
-        </section>
-        <section>
-					<h4>Hardware Specs</h4>
-					<table class="specs">
-						<thead>
-							<tbody>
-								<tr>
-									<td>CPU</td>
-									<td>MIPS 24KEc 580MHz</td>
-								</tr>
-								<tr>
-									<td>RAM</td>
-									<td>64MB</td>
-								</tr>
-								<tr>
-									<td>Flash</td>
-									<td>32MB</td>
-								</tr>
-								<tr>
-									<td>WiFi</td>
-									<td>b/g/n 2.4GHz</td>
-								</tr>
-								<tr>
-									<td>Ethernet</td>
-									<td>10/100Mbps</td>
-								</tr>
-								<tr>
-									<td>USB</td>
-									<td>2 x USB 2.0</td>
-								</tr>
-								<tr>
-									<td>MCU</td>
-									<td>ARM Cortex M0 48MHz</td>
-								</tr>
-							</tbody>
-					</table>
-				</section>
+        <h3>Tessel 2</h3>
+        <div class="stretch">
+          <a href="assets/tessel.png" target="_blank">
+            <img src="assets/tessel.png">
+          </a>
+        </div>
       </section>
 
       <section>
@@ -372,13 +393,6 @@
         <h3>Buttons, Potentiometer</h3>
         <div class="stretch">
           <img src="assets/kit-010.jpg"/>
-        </div>
-      </section>
-
-      <section>
-        <h3>Sensor: Temperature</h3>
-        <div class="stretch">
-          <img src="assets/kit-011.jpg"/>
         </div>
       </section>
 
@@ -497,8 +511,8 @@ board.on("ready", function() {
       <section>
         <br><br>
         <div class="stretch">
-          <a href="assets/button_bb.png" target="_blank">
-            <img src="assets/button_bb.png" style="width: 800px">
+          <a href="assets/tessel_button_led.png" target="_blank">
+            <img src="assets/tessel_button_led.png" style="width: 800px">
           </a>
         </div>
       </section>
@@ -575,9 +589,11 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <!-- TODO: Replace with tessel -->
-        <h4>REPLACE WITH TESSEL</h4>
-        <img src="assets/potentiometer_bb.png">
+        <h3>Variable Input</h3>
+        <div class="stretch">
+          <img src="assets/tessel_potentiometer.png">
+        </div>
+        
       </section>
 
       <section>
@@ -601,6 +617,26 @@ board.on("ready", function() {
           <a href="http://johnny-five.io/api/sensor" target="_blank" class="roll"><span data-title="http://johnny-five.io/api/sensor">http://johnny-five.io/api/sensor</span></a>
         </h4>
 
+      </section>
+
+      <section>
+        <pre class="stretch"><code class="javascript">var five = require("johnny-five");
+var Tessel = require("tessel-io");
+var board = new five.Board({
+  io: new Tessel()
+});
+
+board.on("ready", function() {
+  var sensor = new five.Sensor({
+    pin: "a7",
+    threshold: 2
+  });
+  var led = new five.Led("b5");
+
+  sensor.on("change", () => {
+    led.brightness(sensor.scaleTo(0, 255));
+  });
+});</code></pre>
       </section>
 
       <section>
@@ -642,56 +678,7 @@ board.on("ready", function() {
       </section>
 
       <section>
-        <h2>Convert 10-bit Input <br>to 8-bit Output</h2>
-      </section>
-
-      <section>
-        <h2>10 bits</h2>
-        <h3>0 - 1023</h3>
-        <h3>0V ~ 3.3V</h3>
-      </section>
-
-      <section>
-        <h2>
-          Side Quest!
-        </h2>
-        <p>Open Developer Tools Console in either Firefox, Chrome or Edge, paste this:</p>
-        <pre><code> 0b1111111111</code></pre>
-        <h4>Hit &lt;enter&gt;</h4>
-      </section>
-
-      <section>
-        <br>
-        <h2 style="text-align:left"><code>
-            0b00000000 (0)
-            0b01000000 (64)
-            0b01111111 (127*)
-            0b10111111 (191)
-            0b11111111 (255*)
-        </code></h2>
-      </section>
-
-
-      <section>
-        <h2><code>
-            0b1111111111
-            0b0011111111
-        </code></h2>
-      </section>
-
-      <section>
-        <h2 style="text-align:left"><code>
-            0b1111111111 &gt;&gt; 2
-            0b0011111111
-            0b11111111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            255&nbsp;
-        </code></h2>
-        <br>
-      </section>
-
-      <section>
         <h2>PWM</h2>
-
         <p>
           Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. <br>Digital control
           is used to create a square wave, a signal switched between on and off. <br> - Arduino.cc
@@ -703,68 +690,6 @@ board.on("ready", function() {
 
       <section>
         <img src="assets/pwm.gif" style="width: 400px;background-color:#ffffff">
-      </section>
-
-      <section>
-        <h3>Convert 10-bit Analog Input to 8-bit PWM Output</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var led = new five.Led(11);
-  var rotary = new five.Sensor("B0");
-
-  rotary.on("change", function() {
-    // Analog sensors produce a 10-bit value,
-    // but led brightness is an 8-bit PWM value.
-    // Convert by shifting the value's bits
-    // two places to the right.
-    led.brightness(this.value >> 2);
-  });
-});
-</code></pre>
-        <pre><code>t2 run sensor.js</code></pre>
-      </section>
-
-      <section>
-        <h2>Observe The Environment</h2>
-      </section>
-
-
-      <section>
-       <img src="assets/TMP36.jpg">
-      </section>
-
-
-      <section>
-        <!-- TODO: Replace with tessel -->
-        <h4>REPLACE WITH TESSEL</h4>
-        <img src="assets/tmp36_bb.png">
-      </section>
-
-      <section>
-        <h3>Temperature</h3>
-        <pre><code contenteditable="" class="javascript">var five = require("johnny-five");
-var Tessel = require("tessel-io");
-var board = new five.Board({
-  io: new Tessel()
-});
-
-board.on("ready", function() {
-  var temp = new five.Temperature({
-    controller: "TMP36",
-    pin: "B0"
-  });
-
-  temp.on("change", function() {
-    console.log(this.celsius + "°C");
-  });
-});
-</code></pre>
-        <pre><code>t2 run temperature.js</code></pre>
       </section>
 
       <section>
