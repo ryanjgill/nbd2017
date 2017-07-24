@@ -256,50 +256,6 @@
 
       <section>
         <section>
-          <h3>Creat An Access Point</h3>
-          <pre><code contenteditable="">t2 ap -n NAME -p PASSWORD</code></pre>
-          <image src="assets/t2_ap.gif" class="stretch"/>
-        </section>
-        <section>
-          <pre><code>t2 ap -n SSID -p PASSWORD</code></pre>
-          <table class="flag_details">
-            <thead>
-              <tr>
-                <th>Flag</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>-n</td>
-                <td>name of network to create</td>
-              </tr>
-              <tr>
-                <td>-p</td>
-                <td>optional password for network</td>
-              </tr>
-              <tr>
-                <td>-s</td>
-                <td>optional security type (wep, psk, psk2 wpa, wpa2)</td>
-              </tr>
-              <tr>
-                <td>--off</td>
-                <td>turn off current access point</td>
-              </tr>
-              <tr>
-                <td>--on</td>
-                <td>turn on most recent access point</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="note">NOTE: try turning off wifi before creating access point. 
-            <pre><code>t2 wifi --off</code></pre>
-          </p>
-        </section>
-      </section>
-
-      <section>
-        <section>
           <h3>Using Wifi</h3>
           <pre><code contenteditable="">t2 wifi</code></pre>
           <image src="assets/t2_wifi.gif" class="stretch"/>
@@ -342,6 +298,50 @@
           </table>
           <p class="note">NOTE: try turning off access point before connecting to wifi. 
             <pre><code>t2 ap --off</code></pre>
+          </p>
+        </section>
+      </section>
+      
+      <section>
+        <section>
+          <h3>Create An Access Point</h3>
+          <pre><code contenteditable="">t2 ap -n NAME -p PASSWORD</code></pre>
+          <image src="assets/t2_ap.gif" class="stretch"/>
+        </section>
+        <section>
+          <pre><code>t2 ap -n SSID -p PASSWORD</code></pre>
+          <table class="flag_details">
+            <thead>
+              <tr>
+                <th>Flag</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-n</td>
+                <td>name of network to create</td>
+              </tr>
+              <tr>
+                <td>-p</td>
+                <td>optional password for network</td>
+              </tr>
+              <tr>
+                <td>-s</td>
+                <td>optional security type (wep, psk, psk2 wpa, wpa2)</td>
+              </tr>
+              <tr>
+                <td>--off</td>
+                <td>turn off current access point</td>
+              </tr>
+              <tr>
+                <td>--on</td>
+                <td>turn on most recent access point</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">NOTE: try turning off wifi before creating access point. 
+            <pre><code>t2 wifi --off</code></pre>
           </p>
         </section>
       </section>
@@ -718,6 +718,13 @@ board.on("ready", function() {
 
       <section>
         <img src="assets/peewee_bot_side_view.jpg" style="width: 600px">
+      </section>
+
+      <section>
+        <h3>Wiring</h3>
+        <div class="stretch">
+          <img src="assets/runt-rover-wiring.png"/>
+        </div>
       </section>
 
      
