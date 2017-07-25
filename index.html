@@ -136,7 +136,21 @@
 								</tr>
 							</tbody>
 					</table>
-				</section>
+        </section>
+         <section>
+          <h2>The Tessel Mission</h2>
+          <p>Create a fully open source hardware & software platform that makes it easy and intuitive to develop Internet-connected devices.</p>
+        </section>
+        <section>
+          <h2>Core Philosophies</h2>
+          <ul>
+            <li>Developer experience is paramount</li>
+            <li>Device design should focus on user experience rather than on implementation</li>
+            <li>Openness promotes innovation</li>
+            <li>Tessel should be practical to use</li>
+            <li>Community matters</li>
+          </ul>
+        </section>
       </section>
 
       <section>
@@ -157,6 +171,41 @@
           </a>
         </p>
       </section>
+
+      <section>
+        <h2>
+          Connect The Tessel to your computer via USB
+        </h2>
+      </section>
+
+      <section>
+        <h2>Find your Tessel</h2>
+        <pre><code contenteditable="" class="javascript">t2 list</code></pre>
+      </section>
+
+      <section>
+        <h2>Name your Tessel</h2>
+        <pre><code contenteditable="" class="javascript">t2 rename mario</code></pre>
+      </section>
+
+      <section>
+        <h2>Authorize</h2>
+        <pre><code contenteditable="" class="javascript">t2 provision</code></pre>
+      </section>
+
+      <section>
+        <h3>Create working directory</h3>
+        <pre><code contenteditable="">mkdir t2_fun && cd t2_fun</code></pre>
+        <image src="assets/mkdir.gif" class="stretch"/>
+      </section>
+      
+      <section>
+        <h3>Initialize project</h3>
+        <pre><code class="javascript">t2 init</code></pre>
+        <image src="assets/t2_init.gif" class="stretch"/>
+      </section>
+
+
       <section>
         <section>
           <h3>Run a file</h3>
@@ -413,22 +462,8 @@
       </section>
 
       <section>
-        <h2>
-          Connect The Tessel to your computer via USB
-        </h2>
-      </section>
-
-
-      <section>
         <h3>Create working directory</h3>
-        <pre><code contenteditable="">mkdir tessel_fun && cd tessel_fun</code></pre>
-        <image src="assets/mkdir.gif" class="stretch"/>
-      </section>
-
-      <section>
-        <h3>Initialize project</h3>
-        <pre><code class="javascript">t2 init</code></pre>
-        <image src="assets/t2_init.gif" class="stretch"/>
+        <pre><code contenteditable="">mkdir led && cd led</code></pre>
       </section>
 
       <section>
@@ -439,9 +474,9 @@
       <section>
         <h3>Make a new file</h3>
         <p class="note">Mac users:</p>
-        <pre><code>touch blink.js</code></pre>
+        <pre><code>touch led-on.js</code></pre>
         <p class="note">Windows users:</p>
-        <pre><code>type nul > blink.js</code></pre>
+        <pre><code>type nul > led-on.js</code></pre>
       </section>
 
       <section>
